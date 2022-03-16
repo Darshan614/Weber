@@ -1,3 +1,25 @@
-.h{
+.h {
   color: white;
+  font-size: 5em;
+  margin: 2%;
 }
+
+.tech {
+  color: white;
+  margin: 1%;
+}
+
+.top {
+  color: rgb(5, 5, 5);
+  background-color: rgb(247, 247, 3);
+  display:inline-block;
+  padding: 1%;
+  border-radius: 2px;
+  margin: 2%;
+}
+
+.top:hover{
+  background-color: rgb(83, 168, 243);
+  
+}
+

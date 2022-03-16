@@ -10,7 +10,7 @@ ReactDOM.render(<Router>
   <Routes>
     
     <Route path="/" element={<App />}></ Route>
-      <Route path="/Tech" element={<Tech />} >"
+      <Route path="/:title" element={<Tech />} >"
       </Route>
     </Routes>
 </Router>
