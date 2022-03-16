@@ -17,8 +17,23 @@
   color: red;
 }
 
+.img {
+  height: 5%;
+  width: 30%;
+  margin-right: 10px;
+}
+
+.fr {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  justify-content: space-between;
+}
+
 @media (max-width: 858px) {
   .weber {
     font-size: 4em;
+  }
+  .img {
+    margin-right: 5px;
   }
 }
