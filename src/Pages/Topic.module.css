@@ -1,13 +1,12 @@
 .topic {
   margin: 2%;
   padding: 2%;
-  color: yellow;
+  color: rgb(3, 3, 3);
   font-size: larger;
-  text-decoration: underline
 }
 
 .code {
-  background-color: rgba(212, 19, 5, 0.541);
+  background-color: rgba(17, 2, 83, 0.932);
   padding: 2%;
   border-radius: 4px;
   margin: 2%;
@@ -15,7 +14,14 @@
 }
 
 .desc {
-  color: white;
-  margin: 2%;
+  color: black;
   padding: 2%;
+  margin: 2%;
 }
+
+.d{
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  margin-bottom: 5%;
+}
+

@@ -11,14 +11,19 @@ function Topic() {
   console.log(TopicData);
 
   return (
-    <Fragment>
-      <div className={classes.topic}>{params.topic}</div>
-      <p className={classes.code}>{code}</p>
-      <p className={classes.desc}>
-        It displays a heading saying “Hello, world!” on the page.
-      </p>
-      <div className={classes.topic}>Discussions</div>
-    </Fragment>
+    <div>
+      <div className={classes.d}>
+        <div className={classes.topic}>{params.topic}</div>
+        <p className={classes.code}>{code}</p>
+        <p className={classes.desc}>
+          It displays a heading saying “Hello, world!” on the page.
+        </p>
+      </div>
+      <div className={classes.d}>
+        <div className={classes.topic}>Discussions</div>
+        <div> How to initialize ?</div>
+      </div>
+    </div>
   );
 }
 
