@@ -2,13 +2,25 @@ import React, { Fragment } from 'react';
 import classes from './Topic.module.css';
 import { useParams } from 'react-router-dom';
 import { TopicData } from '../Data/TopicData';
+import { TopicQA } from '../Data/TopicQA';
 
 function Topic() {
   let params = useParams();
   let topic = params.topic;
-  console.log(TopicData);
+  // console.log(TopicData);
   let code = TopicData[params.title][params.topic][0];
-  console.log(TopicData);
+  // console.log(TopicData);
+  console.log(TopicQA);
+  console.log(TopicQA[params.title][params.topic]);
+  let answers = TopicQA[params.title][params.topic].map((qa) => (
+    //  console.log(Object.keys(qa)[0],Object.values(qa)[0]);
+    <p>
+      <p className={classes.question}>{Object.keys(qa)[0]}</p>
+      {Object.values(qa)[0].map((ans) => (
+        <p className={classes.answer}>{ans}</p>
+      ))}
+    </p>
+  ));
 
   return (
     <div>
@@ -21,7 +33,8 @@ function Topic() {
       </div>
       <div className={classes.d}>
         <div className={classes.topic}>Discussions</div>
-        <div> How to initialize ?</div>
+        <hr />
+        <div> {answers}</div>
       </div>
     </div>
   );
