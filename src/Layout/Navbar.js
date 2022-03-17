@@ -24,12 +24,12 @@ function Navbar() {
         </li>
         <li className={classes.li}>
           <a className={classes.link} href="#">
-            About
+            Answers
           </a>
         </li>
         <li className={classes.li}>
           <a className={classes.link} href="#">
-            Contact
+            Questions
           </a>
         </li>
         <li className={classes.li}>
