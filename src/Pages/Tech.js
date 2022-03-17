@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Tech.module.css';
-import { useParams } from 'react-router-dom';
+import { useParams , Link } from 'react-router-dom';
 import { TechData } from '../Data/TechData';
 
 function Tech() {
@@ -13,7 +13,7 @@ function Tech() {
   console.log(tech)
   let color = tech[0].color;
 
-  const techs = tech[0].topics.map(t=> <p className={classes.top} key={t}><div>{t}</div></p> )
+  const techs = tech[0].topics.map(t=><Link to={'/'+params.title+'/'+t}> <p className={classes.top} key={t}><div>{t}</div></p></Link> )
 
   return (
     <div >

@@ -4,6 +4,7 @@ import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import App from "./App";
 import Tech from "./Pages/Tech";
 import Navbar from './Layout/Navbar';
+import Topic from './Pages/Topic';
 
 ReactDOM.render(<Router>
   <Navbar />
@@ -11,6 +12,8 @@ ReactDOM.render(<Router>
     
     <Route path="/" element={<App />}></ Route>
       <Route path="/:title" element={<Tech />} >"
+      </Route>
+      <Route path="/:title/:topic" element={<Topic />} >"
       </Route>
     </Routes>
 </Router>
