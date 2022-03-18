@@ -22,11 +22,18 @@ export default function BasicModal(props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const posthandler = (event) => {
+    event.preventDefault();
+    console.log('in post');
+
+    handleClose();
+  };
+
   return (
     <span>
-      <Button className={classes.butt} onClick={handleOpen}>
+      <button className={classes.butt} onClick={handleOpen}>
         +
-      </Button>
+      </button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -40,8 +47,16 @@ export default function BasicModal(props) {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <form>
               <textarea className={classes.textarea}></textarea>
-              <button className={classes.cancel}>Cancel</button>
-              <button className={classes.post}>Post</button>
+              <button className={classes.cancel} onClick={handleClose}>
+                Cancel
+              </button>
+              <button
+                type="submit"
+                onClick={posthandler}
+                className={classes.post}
+              >
+                Post
+              </button>
             </form>
           </Typography>
         </Box>

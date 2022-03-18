@@ -12,7 +12,17 @@
 
 .butt{
   float: inline-end;
-  padding: 3px;
+  padding: 2px;
+  color: rgb(5, 4, 4);
+  background-color: rgb(244, 246, 248);
+  margin: 0;
+  border-radius: 4px;
+  border-color: rgb(74, 74, 189);
+}
+.butt:hover{
+  cursor: pointer;
+  color: white;
+  background-color: rgb(4, 134, 15);
 }
 
 .post{

@@ -20,7 +20,7 @@ function Topic() {
     <p>
       <p className={classes.question}>
         {Object.keys(qa)[0]}
-        
+        <Overl className={classes.overl} message={"Add answer"}/>
       </p>
       {Object.values(qa)[0].map((ans) => (
         <p className={classes.answer}>{ans}</p>
