@@ -1,0 +1,12 @@
+.box{
+  height: 300px;
+}
+
+.textarea{
+  padding-bottom: 200px;
+}
+
+.butt{
+  float: inline-end;
+  padding: 0;
+}
