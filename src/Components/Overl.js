@@ -40,7 +40,8 @@ export default function BasicModal(props) {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <form>
               <textarea className={classes.textarea}></textarea>
-              <button>Post</button>
+              <button className={classes.cancel}>Cancel</button>
+              <button className={classes.post}>Post</button>
             </form>
           </Typography>
         </Box>

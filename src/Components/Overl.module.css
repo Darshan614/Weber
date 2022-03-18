@@ -1,12 +1,41 @@
 .box{
-  height: 300px;
+  height: 360px;
+  background-color: grey;
 }
 
 .textarea{
   padding-bottom: 200px;
+  font-size: 1em;
+  padding-right: 0px;
+  margin-left: 0;
 }
 
 .butt{
   float: inline-end;
-  padding: 0;
+  padding: 3px;
+}
+
+.post{
+  margin-top: 2%;
+  float: inline-end;
+  padding: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(2, 102, 10);
+  color: white;
+  border-radius: 5px;
+}
+.post:hover, .cancel:hover{
+  cursor: pointer;
+  background-color: rgb(10, 10, 10);
+}
+
+.cancel{
+  margin-top: 2%;
+  padding: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(172, 5, 5);
+  color: white;
+  border-radius: 5px;
 }
