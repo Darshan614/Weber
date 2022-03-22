@@ -1,0 +1,19 @@
+.formbody {
+  color: white;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.input {
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  border-radius: 5px;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: rgb(55, 0, 255);
+  color: white;
+}
+
+.container {
+  margin-top: 5%;
+}
