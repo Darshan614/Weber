@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './AuthForm.module.css';
 
 function AuthForm() {
+  const [login, setlogin] = useState(true);
+
+  const formsubmithandler = (e) => {
+    e.preventDefault();
+    console.log('Submit');
+    //fetch request
+  };
+
+  const formtogglehandler = (e) => {
+    e.preventDefault();
+    setlogin((state) => !state);
+    window.scrollTo(0, 0);
+  };
+
   const FormHeader = (props) => (
     <h2 className={classes.headerTitle}>{props.title}</h2>
   );
 
   const Form = (props) => (
     <div>
+      {!login && (
+        <FormInput
+          description="Email"
+          placeholder="Enter your email"
+          type="email"
+        />
+      )}
       <FormInput
         description="Username"
         placeholder="Enter your username"
@@ -18,13 +39,23 @@ function AuthForm() {
         placeholder="Enter your password"
         type="password"
       />
-      <FormButton title="Log in" />
+      {!login && (
+        <FormInput
+          description="Confirm Password"
+          placeholder="Enter password again"
+          type="password"
+        />
+      )}
+      <FormButton
+        onclickhandler={formsubmithandler}
+        title={login ? 'Login' : 'SignUp'}
+      />
     </div>
   );
 
   const FormButton = (props) => (
     <div className={classes.button} className={classes.row}>
-      <button>{props.title}</button>
+      <button onClick={props.onclickhandler}>{props.title}</button>
     </div>
   );
 
@@ -65,9 +96,16 @@ function AuthForm() {
   );
   return (
     <div className={classes.loginform}>
-      <FormHeader title="Login" />
+      <FormHeader title={login ? 'Login' : 'SignUp'} />
       <Form />
       <OtherMethods />
+      <div className={classes.alternativeLogin}>
+        <label>{login ? 'New User?' : 'Existing user?'}</label>
+      </div>
+      <FormButton
+        onclickhandler={formtogglehandler}
+        title={!login ? 'Login' : 'SignUp'}
+      />
     </div>
   );
 }
