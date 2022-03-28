@@ -18,12 +18,12 @@ function Navbar() {
       <label className={classes.label}></label>
       <ul className={`${listshow ? classes.show : classes.lst}`}>
         <li className={classes.li}>
-          <a className={classes.active} href="#">
+          <a className={classes.active} href="/">
             Home
           </a>
         </li>
         <li className={classes.li}>
-          <a className={classes.link} href="#">
+          <a className={classes.link} href="/Answers">
             Answers
           </a>
         </li>
@@ -33,7 +33,7 @@ function Navbar() {
           </a>
         </li>
         <li className={classes.li}>
-          <a className={classes.link} href="#">
+          <a className={classes.link} href="/">
             Logout
           </a>
         </li>
