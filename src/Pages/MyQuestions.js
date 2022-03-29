@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './MyQuestions.module.css';
+import { HandThumbsUpFill, HandThumbsDownFill } from 'react-bootstrap-icons';
 
 function MyAnswers() {
   //fetch answers and send as props
@@ -29,7 +30,11 @@ function MyAnswers() {
                   return (
                     <div>
                       <p className={classes.author}> {Object.keys(a)}</p>
-                      <p>{Object.values(a)}</p>
+                      <p>
+                        {Object.values(a)}
+                        <a href="#"><HandThumbsUpFill className={classes.like} /></a>
+                        <a href="#"><HandThumbsDownFill className={classes.dislike} /></a>
+                      </p>
                       <hr />
                     </div>
                   );

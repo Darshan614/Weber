@@ -20,3 +20,14 @@
 .author{
   color: rgba(1, 30, 39, 0.61);
 }
+
+.like{
+  color: rgb(3, 104, 20);
+  float: inline-end;
+}
+
+.dislike{
+  color: red;
+  float: inline-end;
+  margin-right: 4px;
+}

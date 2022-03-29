@@ -1,7 +1,9 @@
 import React from 'react';
 import classes from './Navbar.module.css';
 import { List } from 'react-bootstrap-icons';
+import { HandThumbsDown } from 'react-bootstrap-icons';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   const [listshow, setshowlist] = useState(false);
@@ -18,24 +20,44 @@ function Navbar() {
       <label className={classes.label}></label>
       <ul className={`${listshow ? classes.show : classes.lst}`}>
         <li className={classes.li}>
-          <a className={classes.active} href="/">
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? classes.active : classes.link
+            }
+            to="/"
+          >
             Home
-          </a>
+          </NavLink>
         </li>
         <li className={classes.li}>
-          <a className={classes.link} href="/Answers">
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? classes.active : classes.link
+            }
+            to="/Answers"
+          >
             Answers
-          </a>
+          </NavLink>
         </li>
         <li className={classes.li}>
-          <a className={classes.link} href="#">
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? classes.active : classes.link
+            }
+            to="/Questions"
+          >
             Questions
-          </a>
+          </NavLink>
         </li>
         <li className={classes.li}>
-          <a className={classes.link} href="/">
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? classes.active : classes.link
+            }
+            to="/#"
+          >
             Logout
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>
