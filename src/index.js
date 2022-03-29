@@ -7,6 +7,8 @@ import Navbar from './Layout/Navbar';
 import Topic from './Pages/Topic';
 import Auth from './Pages/Auth';
 import MyAnswers from './Pages/MyAnswers';
+import MyQuestions from './Pages/MyQuestions';
+
 
 ReactDOM.render(
   <Router>
@@ -23,6 +25,9 @@ ReactDOM.render(
         "
       </Route>
       <Route path="/Answers" element={<MyAnswers />}>
+        "
+      </Route>
+      <Route path="/Questions" element={<MyQuestions />}>
         "
       </Route>
     </Routes>
