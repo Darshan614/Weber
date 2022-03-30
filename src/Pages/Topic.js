@@ -5,6 +5,7 @@ import { TopicData } from '../Data/TopicData';
 import { TopicQA } from '../Data/TopicQA';
 import { Plus } from 'react-bootstrap-icons';
 import Overl from '../Components/Overl';
+import { HandThumbsUpFill, HandThumbsDownFill } from 'react-bootstrap-icons';
 
 function Topic() {
   let params = useParams();
@@ -20,14 +21,21 @@ function Topic() {
     <p>
       <p className={classes.question}>
         {Object.keys(qa)[0]}
-        <Overl className={classes.overl} message={"Add answer"}/>
+        <Overl className={classes.overl} message={'Add answer'} />
       </p>
       {Object.values(qa)[0].map((ans) => (
-        <p className={classes.answer}>{ans}</p>
+        <p className={classes.answer}>
+          {ans}
+          <a href="#">
+            <HandThumbsDownFill className={classes.dislike} />
+          </a>
+          <a href="#">
+            <HandThumbsUpFill className={classes.like} />
+          </a>
+        </p>
       ))}
     </p>
   ));
-
 
   return (
     <div>
@@ -39,11 +47,11 @@ function Topic() {
       <div className={classes.d}>
         <div className={classes.topic}>
           Discussions
-          <Overl className={classes.overl} message={"Ask a question"}/>
+          <Overl className={classes.overl} message={'Ask a question'} />
         </div>
-        
+
         <hr />
-        
+
         <div> {answers}</div>
       </div>
     </div>

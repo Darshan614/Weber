@@ -7,9 +7,15 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   const [listshow, setshowlist] = useState(false);
+  const [listhide, setlisthide] = useState(true);
   const showList = (event) => {
-    console.log(listshow);
     setshowlist(!listshow);
+  };
+
+  const listhider = () => {
+    setshowlist((prevstate) => {
+      return !prevstate;
+    });
   };
 
   return (
@@ -21,6 +27,7 @@ function Navbar() {
       <ul className={`${listshow ? classes.show : classes.lst}`}>
         <li className={classes.li}>
           <NavLink
+            onClick={listhider}
             className={(navData) =>
               navData.isActive ? classes.active : classes.link
             }
@@ -31,6 +38,7 @@ function Navbar() {
         </li>
         <li className={classes.li}>
           <NavLink
+            onClick={listhider}
             className={(navData) =>
               navData.isActive ? classes.active : classes.link
             }
@@ -41,6 +49,7 @@ function Navbar() {
         </li>
         <li className={classes.li}>
           <NavLink
+            onClick={listhider}
             className={(navData) =>
               navData.isActive ? classes.active : classes.link
             }
@@ -51,6 +60,7 @@ function Navbar() {
         </li>
         <li className={classes.li}>
           <NavLink
+            onClick={listhider}
             className={(navData) =>
               navData.isActive ? classes.active : classes.link
             }
