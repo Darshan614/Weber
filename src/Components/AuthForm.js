@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import classes from './AuthForm.module.css';
 import { Twitter, Google, Facebook } from 'react-bootstrap-icons';
 
 function AuthForm() {
   const [login, setlogin] = useState(true);
 
+  const usernameInputRef = useRef();
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
+  const confirmpasswordInputRef = useRef();
+
   const formsubmithandler = (e) => {
     e.preventDefault();
-    console.log('Submit');
+    // console.log('Submit',usernameInputRef.current.value,passwordInputRef.current.value,passwordInputRef.current.value,confirmpasswordInputRef.current.value);
     //fetch request
+    {islogin &&
+    fetch()}
   };
 
   const formtogglehandler = (e) => {
@@ -28,23 +35,27 @@ function AuthForm() {
           description="Email"
           placeholder="Enter your email"
           type="email"
+          r={emailInputRef}
         />
       )}
       <FormInput
         description="Username"
         placeholder="Enter your username"
         type="text"
+        r={usernameInputRef}
       />
       <FormInput
         description="Password"
         placeholder="Enter your password"
         type="password"
+        r={passwordInputRef}
       />
       {!login && (
         <FormInput
           description="Confirm Password"
           placeholder="Enter password again"
           type="password"
+          r={confirmpasswordInputRef}
         />
       )}
       <FormButton
@@ -63,7 +74,7 @@ function AuthForm() {
   const FormInput = (props) => (
     <div className={classes.row}>
       <label>{props.description}</label>
-      <input type={props.type} placeholder={props.placeholder} />
+      <input type={props.type} placeholder={props.placeholder} ref={props.r}/>
     </div>
   );
 
