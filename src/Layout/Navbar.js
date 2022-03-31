@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './Navbar.module.css';
 import { List } from 'react-bootstrap-icons';
-import { HandThumbsDown } from 'react-bootstrap-icons';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -64,9 +63,9 @@ function Navbar() {
             className={(navData) =>
               navData.isActive ? classes.active : classes.link
             }
-            to="/#"
+            to="/Auth"
           >
-            Logout
+            Login
           </NavLink>
         </li>
       </ul>

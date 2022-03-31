@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classes from './AuthForm.module.css';
+import { Twitter, Google, Facebook } from 'react-bootstrap-icons';
 
 function AuthForm() {
   const [login, setlogin] = useState(true);
@@ -70,28 +71,28 @@ function AuthForm() {
     <div className={classes.alternativeLogin}>
       <label>Or sign in with:</label>
       <div className={classes.iconGroup}>
-        <Facebook />
-        <Twitter />
-        <Google />
+        <Face />
+        <Tweet />
+        <Goog />
       </div>
     </div>
   );
 
-  const Facebook = (props) => (
+  const Face = (props) => (
     <a href="#" className={classes.facebookIcon}>
-      f
+      <Facebook />
     </a>
   );
 
-  const Twitter = (props) => (
+  const Tweet = (props) => (
     <a href="#" className={classes.twitterIcon}>
-      t
+      <Twitter />
     </a>
   );
 
-  const Google = (props) => (
+  const Goog = (props) => (
     <a href="#" className={classes.googleIcon}>
-      G
+      <Google />
     </a>
   );
   return (
