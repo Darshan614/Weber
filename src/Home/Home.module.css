@@ -19,8 +19,12 @@
 
 .img {
   height: 5%;
-  width: 30%;
-  margin-right: 10px;
+  width: 15%;
+  margin-right: 15px;
+}
+
+.img:hover {
+  background-color: aqua;
 }
 
 .fr {
@@ -34,6 +38,11 @@
     font-size: 4em;
   }
   .img {
-    margin-right: 5px;
+    margin-right: 15px;
+    width: 100%;
+    height: 100%;
+  }
+  .fr {
+    display: grid;
   }
 }
