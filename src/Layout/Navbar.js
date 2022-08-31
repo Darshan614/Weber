@@ -22,7 +22,7 @@ function Navbar() {
       <label className={classes.label} htmlFor="check">
         <List className={classes.cbtn} onClick={showList} />
       </label>
-      <label className={classes.label}></label>
+      {/* <label className={classes.label}></label> */}
       <ul className={`${listshow ? classes.show : classes.lst}`}>
         <li className={classes.li}>
           <NavLink

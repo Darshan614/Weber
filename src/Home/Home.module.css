@@ -9,6 +9,10 @@
   text-align: center;
 }
 
+.fline {
+  margin-top: 20px;
+}
+
 .ico {
   color: white;
 }
@@ -24,7 +28,8 @@
 }
 
 .img:hover {
-  background-color: aqua;
+  background-color: rgb(49, 74, 218);
+  border-radius: 5px;
 }
 
 .fr {
@@ -41,6 +46,7 @@
     margin-right: 15px;
     width: 100%;
     height: 100%;
+    margin-bottom: 10%;
   }
   .fr {
     display: grid;

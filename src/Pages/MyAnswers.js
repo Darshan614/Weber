@@ -19,8 +19,9 @@ function MyAnswers() {
     );
   });
   return (
-    <div >
+    <div>
       <h2 className={classes.qas}>My Answers</h2>
+      <hr></hr>
       <p>{qa}</p>
     </div>
   );

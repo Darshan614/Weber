@@ -11,7 +11,7 @@ function Home() {
   ));
   return (
     <div className={classes.home}>
-      <p>Build your web development career with </p>
+      <p className={classes.fline}>Build your web development career with </p>
       <div className={classes.weber}>
         WEB<span className={classes.er}>ER</span>
       </div>
