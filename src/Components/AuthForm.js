@@ -33,7 +33,7 @@ function AuthForm() {
         if (res.ok) {
         } else {
           return res.json().then((data) => {
-            alert('Failed to create a user! Check input');
+            alert('Failed to login! Check input');
           });
         }
       });
@@ -75,20 +75,20 @@ function AuthForm() {
 
   const Form = (props) => (
     <div>
+      <FormInput
+        description="Email"
+        placeholder="Enter your email"
+        type="email"
+        r={emailInputRef}
+      />
       {!login && (
         <FormInput
-          description="Email"
-          placeholder="Enter your email"
-          type="email"
-          r={emailInputRef}
+          description="Username"
+          placeholder="Enter your username"
+          type="text"
+          r={usernameInputRef}
         />
       )}
-      <FormInput
-        description="Username"
-        placeholder="Enter your username"
-        type="text"
-        r={usernameInputRef}
-      />
       <FormInput
         description="Password"
         placeholder="Enter your password"
