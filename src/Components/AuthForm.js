@@ -13,9 +13,54 @@ function AuthForm() {
   const formsubmithandler = (e) => {
     e.preventDefault();
     // console.log('Submit',usernameInputRef.current.value,passwordInputRef.current.value,passwordInputRef.current.value,confirmpasswordInputRef.current.value);
-    //fetch request
-    {islogin &&
-    fetch()}
+    const enteredEmail = emailInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
+    if (login) {
+      fetch(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBaFr6y125Sih4yGCSGmnWkFFnn8ia1i84',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            email: enteredEmail,
+            password: enteredPassword,
+            returnSecureToken: true,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      ).then((res) => {
+        if (res.ok) {
+        } else {
+          return res.json().then((data) => {
+            alert('Failed to create a user! Check input');
+          });
+        }
+      });
+    } else {
+      fetch(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBaFr6y125Sih4yGCSGmnWkFFnn8ia1i84',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            email: enteredEmail,
+            password: enteredPassword,
+            returnSecureToken: true,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      ).then((res) => {
+        if (res.ok) {
+          setlogin(false);
+        } else {
+          return res.json().then((data) => {
+            alert('Failed to create a user! Check input');
+          });
+        }
+      });
+    }
   };
 
   const formtogglehandler = (e) => {
@@ -74,7 +119,7 @@ function AuthForm() {
   const FormInput = (props) => (
     <div className={classes.row}>
       <label>{props.description}</label>
-      <input type={props.type} placeholder={props.placeholder} ref={props.r}/>
+      <input type={props.type} placeholder={props.placeholder} ref={props.r} />
     </div>
   );
 
