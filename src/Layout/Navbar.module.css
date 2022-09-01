@@ -18,6 +18,21 @@
   border-radius: 3px;
 }
 
+.logout {
+  border-radius: 2px;
+  background-color: rgb(201, 5, 5);
+  transition: 0.3s;
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding: 7px 13px;
+}
+
+.logout:hover {
+  cursor: progress;
+}
+
 .label {
   display: none;
 }

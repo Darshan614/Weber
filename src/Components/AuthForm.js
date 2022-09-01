@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
+import AuthContext from '../store/auth-context';
 import classes from './AuthForm.module.css';
 import { Twitter, Google, Facebook } from 'react-bootstrap-icons';
 
@@ -9,6 +10,7 @@ function AuthForm() {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const confirmpasswordInputRef = useRef();
+  const authCtx = useContext(AuthContext);
 
   const formsubmithandler = (e) => {
     e.preventDefault();
@@ -29,14 +31,23 @@ function AuthForm() {
             'Content-Type': 'application/json',
           },
         }
-      ).then((res) => {
-        if (res.ok) {
-        } else {
-          return res.json().then((data) => {
-            alert('Failed to login! Check input');
-          });
-        }
-      });
+      )
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            return res.json().then((data) => {
+              alert('Failed to login! Check input');
+            });
+          }
+        })
+        .then((data) => {
+          console.log(data);
+          authCtx.login(data.idToken);
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
     } else {
       fetch(
         'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBaFr6y125Sih4yGCSGmnWkFFnn8ia1i84',
@@ -51,15 +62,22 @@ function AuthForm() {
             'Content-Type': 'application/json',
           },
         }
-      ).then((res) => {
-        if (res.ok) {
-          setlogin(false);
-        } else {
-          return res.json().then((data) => {
-            alert('Failed to create a user! Check input');
-          });
-        }
-      });
+      )
+        .then((res) => {
+          if (res.ok) {
+            setlogin(false);
+          } else {
+            return res.json().then((data) => {
+              alert('Failed to create a user! Check input');
+            });
+          }
+        })
+        .then((data) => {
+          authCtx.login(data.idToken);
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
     }
   };
 
