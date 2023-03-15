@@ -13,7 +13,7 @@ function Home() {
     <div className={classes.home}>
       <p className={classes.fline}>Build your web development career with </p>
       <div className={classes.weber}>
-        WEB<span className={classes.er}>ER</span>
+        EASY<span className={classes.er}>LEARN</span>
       </div>
       <div className={classes.fr}>{techs}</div>
     </div>
